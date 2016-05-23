@@ -25,7 +25,9 @@ and what you should write is the sayHi function that makes the code above work,
 
 
   //Code Here for first
-  
+  function first(array, callback) {
+      callback(array[0]);
+  }
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -40,7 +42,9 @@ first(names, function(firstName){
 
 
   //Code Here for last
-
+function last(array, callback) {
+    callback(array[6])
+}
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
 });
@@ -57,7 +61,9 @@ last(names, function(lastName){
 
 
   //Code Here for multiply
-
+function multiple(num1, num2, callback){
+    callback(num1 * num2);
+}
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
 })
@@ -73,7 +79,13 @@ multiply(4, 3, function(answer){
 
 
   //Code Here for contains
-
+function contains(array, name, callback) {
+    for(var i = 0; i < array.length; i++) {
+        if(array[i] === name) {
+            var result = callback(true);
+        }
+    }
+}
 contains(names, 'Colt', function(result){
   if(result === true){
     console.log('Colt is in the array');
@@ -92,7 +104,15 @@ contains(names, 'Colt', function(result){
 
 
     //Code Here for uniq
-
+function uniq(array, callback){
+    array.sort();
+    for(var i = 0; i < array.length; i++) {
+        if(array[i]) === array[i] + 1{
+            var index = array[i];
+            array.splice(index, 1);
+        }
+    }
+}
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
@@ -107,7 +127,10 @@ uniq(names, function(uniqArr){
 
 
     //Code Here for each
-
+function each(array, callback){
+   array.forEach(item);
+    callback(item);
+}
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
 });
@@ -123,7 +146,13 @@ each(names, function(item, indice){
 
 
  //code here for getUserById
-
+function getUserById(array, id, callback) {
+    for(var i = 0; i < array.length; i++) {
+        if(id === array[i]) {
+            callback(array[i]);
+        }
+    }
+}
 var users = [
   {
     id: '12d',
